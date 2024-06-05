@@ -1,10 +1,8 @@
 steps:
 
-# Unshallow clone
 - name: gcr.io/cloud-builders/git
   args: ['fetch', '--unshallow']
 
-# build docker image for google container registry
 - name: gcr.io/kaniko-project/executor:latest
   args: [
     "--dockerfile=dockerfiles/monorepo/Dockerfile.celotool",
